@@ -17,6 +17,10 @@ export const user_service = "http://13.203.89.95:5000";
 export const author_service = "http://13.203.89.95:5001";
 export const blog_service = "http://13.203.89.95:5002";
 
+// export const user_service = "http://localhost:5000";
+// export const author_service = "http://localhost:5001";
+// export const blog_service = "http://localhost:5002";
+
 export const blogCategories = [
   "Techonlogy",
   "Health",
