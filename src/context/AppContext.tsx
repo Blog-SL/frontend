@@ -19,7 +19,7 @@ import { get } from "http";
 
 export const user_service = "https://blogsl.dev/user";
 export const author_service = "https://blogsl.dev/author";
-export const blog_service = "https://blogsl.dev/blog";
+export const blog_service = "https://blogsl.dev/blogger";
 
 // export const user_service = "http://localhost:5000";
 // export const author_service = "http://localhost:5001";
