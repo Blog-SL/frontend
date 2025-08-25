@@ -45,9 +45,14 @@ const Navbar = () => {
                   <CircleUserRoundIcon />
                 </Link>
               ) : (
-                <Link href={"/login"} className="hover:text-blue-500">
-                  <LogIn />
-                </Link>
+                <>
+                  <Link href={"/login"} className="hover:text-blue-500 mr-2">
+                    <LogIn />
+                  </Link>
+                  <Link href={"/register"} className="hover:text-blue-500">
+                    Register
+                  </Link>
+                </>
               )}
             </li>
           )}
@@ -57,8 +62,7 @@ const Navbar = () => {
         className={cn(
           "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
           isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-        )}
-      >
+        )}>
         <ul className="flex flex-col justify-center items-center space-y-4 p-4 text-gray-700 bg-white shadow-md">
           <li>
             <Link href={"/"} className="hover:text-blue-500">

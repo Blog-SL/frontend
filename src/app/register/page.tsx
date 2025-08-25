@@ -12,36 +12,42 @@ import axios from "axios";
 import { useAppData, user_service } from "@/context/AppContext";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
-
 import { redirect } from "next/navigation";
 import Loading from "@/components/loading";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const { isAuth, setIsAuth, loading, setLoading, setUser } = useAppData();
+  const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   if (isAuth) return redirect("/blogs");
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const result = await axios.post(`${user_service}/api/v1/login`, {
+      const result = await axios.post(`${user_service}/api/v1/register`, {
+        name,
         email,
         password,
       });
-      Cookies.set("token", result.data.token, {
+      toast.success(result.data.message);
+      // Optionally log in after registration
+      const loginRes = await axios.post(`${user_service}/api/v1/login`, {
+        email,
+        password,
+      });
+      Cookies.set("token", loginRes.data.token, {
         expires: 5,
         secure: true,
         path: "/",
       });
-      toast.success(result.data.message);
       setIsAuth(true);
       setLoading(false);
-      setUser(result.data.user);
+      setUser(loginRes.data.user);
     } catch (error) {
-      toast.error("Invalid email or password");
+      toast.error("Registration failed");
       setLoading(false);
     }
   };
@@ -54,11 +60,19 @@ const LoginPage = () => {
         <div className="w-[350px] m-auto mt-[200px]">
           <Card className="w-[350px]">
             <CardHeader>
-              <CardTitle>Login to The Reading Retreat</CardTitle>
-              <CardDescription>Your go to blog app</CardDescription>
+              <CardTitle>Register for The Reading Retreat</CardTitle>
+              <CardDescription>Create your account</CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleLogin} className="flex flex-col gap-4">
+              <form onSubmit={handleRegister} className="flex flex-col gap-4">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="border p-2 rounded"
+                  required
+                />
                 <input
                   type="email"
                   placeholder="Email"
@@ -75,10 +89,10 @@ const LoginPage = () => {
                   className="border p-2 rounded"
                   required
                 />
-                <Button type="submit">Login</Button>
+                <Button type="submit">Register</Button>
                 <div className="text-center mt-2">
-                  <a href="/register" className="text-blue-600 underline">
-                    Don't have an account? Register
+                  <a href="/login" className="text-blue-600 underline">
+                    Already have an account? Login
                   </a>
                 </div>
               </form>
@@ -90,4 +104,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

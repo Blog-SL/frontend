@@ -10,8 +10,6 @@ import React, {
 import Cookies from "js-cookie";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import { get } from "http";
 
 // export const user_service = "http://13.203.89.95:5000";
 // export const author_service = "http://13.203.89.95:5001";
@@ -21,7 +19,7 @@ export const user_service = "https://blogsl.dev/user";
 export const author_service = "https://blogsl.dev/author";
 export const blog_service = "https://blogsl.dev/blogger";
 
-// export const user_service = "http://localhost:5000";
+//export const user_service = "http://localhost:5000";
 // export const author_service = "http://localhost:5001";
 // export const blog_service = "http://localhost:5002";
 
@@ -187,10 +185,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         savedBlogs,
         getSavedBlogs,
       }}>
-      <GoogleOAuthProvider clientId="918469211683-ho0t5v251ag49ior2bcj879kvbmn45rj.apps.googleusercontent.com">
-        {children}
-        <Toaster />
-      </GoogleOAuthProvider>
+      {children}
+      <Toaster />
     </AppContext.Provider>
   );
 };
