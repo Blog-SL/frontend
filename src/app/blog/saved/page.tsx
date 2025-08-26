@@ -5,7 +5,7 @@ import { useAppData } from "@/context/AppContext";
 import React from "react";
 
 const SavedBlogs = () => {
-  const { blogs, savedBlogs } = useAppData();
+  const { blogs, savedBlogs } = useAppData(); 
 
   if (!blogs || !savedBlogs) {
     return <Loading />;
