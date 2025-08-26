@@ -87,7 +87,7 @@ const RegisterPage = () => {
                   Create Your Account
                 </CardTitle>
                 <CardDescription className="text-gray-600">
-                  Join The Reading Retreat community
+                  Join The BlogSL community
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -95,6 +95,19 @@ const RegisterPage = () => {
                   <div className="space-y-4">
                     <div className="relative group">
                       
+                    </div>
+                    <div className="relative group">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <User className="h-5 w-5 text-gray-400 group-focus-within:text-green-500 transition-colors" />
+                      </div>
+                      <input
+                        type="name"
+                        placeholder="Enter the name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm hover:bg-white/70 focus:bg-white"
+                        required
+                      />
                     </div>
 
                     <div className="relative group">

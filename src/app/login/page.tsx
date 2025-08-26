@@ -71,7 +71,7 @@ return (
             <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
               Welcome Back
             </h1>
-            <p className="text-gray-600 mt-2">Login to The Reading Retreat</p>
+            <p className="text-gray-600 mt-2">Login to The BlogSL</p>
           </div>
 
           <Card className="backdrop-blur-sm bg-white/80 border-0 shadow-2xl shadow-green-500/10 animate-slide-up">
@@ -160,7 +160,7 @@ return (
           </div>
 
           <div className="text-center mt-6 text-sm text-gray-500">
-            Welcome back to The Reading Retreat
+            Welcome back to The BlogSL
           </div>
         </div>
 
