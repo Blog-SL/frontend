@@ -1,6 +1,5 @@
-"use client";
+"use client"; 
 import Link from "next/link";
-import SavedBlogs from "@/app/blog/saved/page";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { Bookmark, BookOpen, CircleUserRoundIcon, Home, LogIn, Menu, User, UserPlus, X } from "lucide-react";
@@ -26,7 +25,7 @@ const Navbar = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                The Reading Retreat
+                The BlogSL
               </h1>
               <p className="text-xs text-gray-500 -mt-1">Your literary sanctuary</p>
             </div>
@@ -63,7 +62,7 @@ const Navbar = () => {
               {isAuth && (
                 <li>
                   <Link 
-                    href="/blog/saved/page" 
+                    href="/blog/saved" 
                     className="flex items-center space-x-2 text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-200 group"
                   >
                     <Bookmark className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
