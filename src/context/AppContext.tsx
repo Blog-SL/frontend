@@ -17,7 +17,8 @@ import toast, { Toaster } from "react-hot-toast";
 
 export const user_service = "https://blogsl.dev/user";
 export const author_service = "https://blogsl.dev/author";
-export const blog_service = "https://blogsl.dev/blogger";
+// export const blog_service = "https://blogsl.dev/blogger";
+export const blog_service = "http://3.6.136.148:5002";
 
 //export const user_service = "http://localhost:5000";
 // export const author_service = "http://localhost:5001";
