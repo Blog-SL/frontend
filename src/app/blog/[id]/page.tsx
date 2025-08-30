@@ -27,6 +27,8 @@ import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
+import moment from "moment";
+import { time } from "console";
 
 interface Comment {
   id: string;
@@ -235,8 +237,12 @@ const BlogPage = () => {
                 <div>
                   <p className="font-semibold text-indigo-900 text-lg">{author?.name}</p>
                   <p className="text-indigo-600 text-sm flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    {new Date(blog.created_at).toLocaleDateString()}
+                    
+                    <Calendar size={14} className="group-hover:text-indigo-600 transition-colors duration-300" />
+                                
+                     <span className="font-medium">{moment(blog.created_at).format("DD-MM-YYYY")}</span>
+                            
+                   
                   </p>
                 </div>
               </Link>

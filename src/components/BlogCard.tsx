@@ -69,9 +69,9 @@ const BlogCard: React.FC<BlogCardProps> = ({
           <div className="flex items-center justify-between pt-2">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">R</span>
+                <span className="text-white text-xs font-bold">B</span>
               </div>
-              <span className="text-sm text-gray-500 font-medium">Reading Retreat</span>
+              <span className="text-sm text-gray-500 font-medium">BlogSL</span>
             </div>
             
             <div className="flex items-center gap-1 text-indigo-600 font-medium text-sm group-hover:gap-2 transition-all duration-300">
